@@ -1,0 +1,207 @@
+SDN实验手册
+SDA、SD-WAN部分基本完工
+
+数据序列化语言  编码方式
+提供文本表示方法
+API的 server与 client 之间交互数据
+
+HTML  
+
+{
+    "Cisco-IOS-XE-native:vty": [
+        {
+            "first": 0,
+            "login": {
+                "local": [
+                    null
+                ]
+            },
+            "transport": {
+                "input": {
+                    "none": [
+                        null
+                    ]
+                }
+            }
+        },
+        {
+            "first": 1,
+            "length": 0,
+            "login": {
+                "local": [
+                    null
+                ]
+            },
+            "transport": {
+                "input": {
+                    "none": [
+                        null
+                    ]
+                }
+            }
+        },
+        {
+            "first": 2,
+            "last": 4,
+            "login": {
+                "local": [
+                    null
+                ]
+            },
+            "transport": {
+                "input": {
+                    "none": [
+                        null
+                    ]
+                }
+            }
+        },
+        {
+            "first": 5,
+            "last": 530,
+            "login": {
+                "local": [
+                    null
+                ]
+            },
+            "transport": {
+                "input": {
+                    "none": [
+                        null
+                    ]
+                }
+            }
+        }
+    ]
+}
+
+network = {"cisco":[0,1,2,3,4,5,6,7,8,9],"huawei":['a','b','c','d','e','f','g']}
+
+{'response': [{'apManagerInterfaceIp': '',
+               'associatedWlcIp': '',
+               'bootDateTime': '2020-12-13 15:01:00',
+               'collectionInterval': 'Global Default',
+               'collectionStatus': 'Managed',
+               'deviceSupportLevel': 'Supported',
+               'errorCode': None,
+               'errorDescription': None,
+               'family': 'Switches and Hubs',
+               'hostname': 'C3850-1.eiccie.com',
+               'id': '2a30e294-0d64-4d8d-b596-d96044ebe788',
+               'instanceTenantId': '5fa82875a0d4c100ca112d39',
+               'instanceUuid': '2a30e294-0d64-4d8d-b596-d96044ebe788',
+               'interfaceCount': '0',
+               'inventoryStatusDetail': '<status><general '
+                                        'code="SUCCESS"/></status>',
+               'lastUpdateTime': 1608031500972,
+               'lastUpdated': '2020-12-15 11:25:00',
+               'lineCardCount': '0',
+               'lineCardId': '',
+               'location': None,
+               'locationName': None,
+               'macAddress': '2c:86:d2:c3:7a:80',
+               'managementIpAddress': '10.3.1.1',
+               'memorySize': 'NA',
+               'platformId': 'WS-C3850-24T-E',
+               'reachabilityFailureReason': '',
+               'reachabilityStatus': 'Reachable',
+               'role': 'DISTRIBUTION',
+               'roleSource': 'AUTO',
+               'serialNumber': 'FCW2052F0WT',
+               'series': 'Cisco Catalyst 3850 Series Ethernet Stackable Switch',
+               'snmpContact': '',
+               'snmpLocation': '',
+               'softwareType': 'IOS-XE',
+               'softwareVersion': '16.6.6',
+               'tagCount': '0',
+               'tunnelUdpPort': None,
+               'type': 'Cisco Catalyst38xx stack-able ethernet switch',
+               'upTime': '1 day, 20:24:47.26',
+               'waasDeviceMode': None},
+              {'apManagerInterfaceIp': '',
+               'associatedWlcIp': '',
+               'bootDateTime': '2020-12-13 14:48:00',
+               'collectionInterval': 'Global Default',
+               'collectionStatus': 'In Progress',
+               'deviceSupportLevel': 'Supported',
+               'errorCode': None,
+               'errorDescription': None,
+               'family': 'Switches and Hubs',
+               'hostname': 'C3850-2.eiccie.com',
+               'id': '61794224-5695-41ea-a7c1-49471a7d404f',
+               'instanceTenantId': '5fa82875a0d4c100ca112d39',
+               'instanceUuid': '61794224-5695-41ea-a7c1-49471a7d404f',
+               'interfaceCount': '0',
+               'inventoryStatusDetail': '<status><general '
+                                        'code="SYNC"/></status>',
+               'lastUpdateTime': 1608031500320,
+               'lastUpdated': '2020-12-15 11:25:00',
+               'lineCardCount': '0',
+               'lineCardId': '',
+               'location': None,
+               'locationName': None,
+               'macAddress': 'c0:7b:bc:d9:97:00',
+               'managementIpAddress': '10.3.1.2',
+               'memorySize': 'NA',
+               'platformId': 'WS-C3850-24T-E',
+               'reachabilityFailureReason': '',
+               'reachabilityStatus': 'Reachable',
+               'role': 'ACCESS',
+               'roleSource': 'AUTO',
+               'serialNumber': 'FOC1745X0PA',
+               'series': 'Cisco Catalyst 3850 Series Ethernet Stackable Switch',
+               'snmpContact': '',
+               'snmpLocation': '',
+               'softwareType': 'IOS-XE',
+               'softwareVersion': '16.6.6',
+               'tagCount': '0',
+               'tunnelUdpPort': None,
+               'type': 'Cisco Catalyst38xx stack-able ethernet switch',
+               'upTime': '1 day, 20:37:00.11',
+               'waasDeviceMode': None},
+              {'apManagerInterfaceIp': '',
+               'associatedWlcIp': '',
+               'bootDateTime': '2020-12-13 11:31:13',
+               'collectionInterval': 'Global Default',
+               'collectionStatus': 'Managed',
+               'deviceSupportLevel': 'Supported',
+               'errorCode': None,
+               'errorDescription': None,
+               'family': 'Switches and Hubs',
+               'hostname': 'C9300.eiccie.com',
+               'id': '250a6d37-8526-4c66-90e3-266550085f18',
+               'instanceTenantId': '5fa82875a0d4c100ca112d39',
+               'instanceUuid': '250a6d37-8526-4c66-90e3-266550085f18',
+               'interfaceCount': '0',
+               'inventoryStatusDetail': '<status><general '
+                                        'code="SUCCESS"/></status>',
+               'lastUpdateTime': 1608030973712,
+               'lastUpdated': '2020-12-15 11:16:13',
+               'lineCardCount': '0',
+               'lineCardId': '',
+               'location': None,
+               'locationName': None,
+               'macAddress': '50:1c:b0:fe:0d:00',
+               'managementIpAddress': '10.1.1.1',
+               'memorySize': 'NA',
+               'platformId': 'C9300-24U',
+               'reachabilityFailureReason': '',
+               'reachabilityStatus': 'Reachable',
+               'role': 'ACCESS',
+               'roleSource': 'MANUAL',
+               'serialNumber': 'FCW2151G0Q2',
+               'series': 'Cisco Catalyst 9300 Series Switches',
+               'snmpContact': '',
+               'snmpLocation': '',
+               'softwareType': 'IOS-XE',
+               'softwareVersion': '16.6.6',
+               'tagCount': '0',
+               'tunnelUdpPort': None,
+               'type': 'Cisco Catalyst 9300 Switch',
+               'upTime': '1 day, 23:45:50.85',
+               'waasDeviceMode': None}],
+ 'version': '1.0'}
+
+IDE  集成开发环境
+https://developer.cisco.com/
+
